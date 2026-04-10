@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./page.css";
+import "./Page.css";
 
 type Tab = "program" | "meny" | "bordkart";
 
