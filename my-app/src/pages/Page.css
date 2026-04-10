@@ -1,0 +1,113 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+.page {
+  min-height: 100vh;
+  background-color: #eae4df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
+  color: #5f5954;
+}
+
+/* Outer frame */
+.frame {
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;
+  border: 1px solid #7e7771;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner frame */
+.inner-frame {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #b5aea8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 INVITATION CARD */
+.card {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Elegant divider lines */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #b5aea8;
+  opacity: 0.6;
+}
+
+/* Tabs (minimal, elegant) */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7e7771;
+  cursor: pointer;
+}
+
+/* Content */
+.tab-content {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Titles */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+/* Program rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* Menu */
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 6px 0;
+}
+
+h2 {
+  margin-top: 15px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}

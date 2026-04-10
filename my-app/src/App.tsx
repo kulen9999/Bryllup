@@ -1,4 +1,5 @@
-import Page from "./page";
+// @ts-ignore
+import Page from "./pages/Page";
 
 function App() {
   return <Page />;
