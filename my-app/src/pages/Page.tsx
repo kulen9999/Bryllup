@@ -43,7 +43,7 @@ export default function Page() {
 
             {/* Bottom divider */}
             <div className="divider" />
-
+            {/*<img src={blomsttitel}  className="titelIMG"></img>*/}
           </div>
 
         </div>
@@ -67,6 +67,7 @@ function Program() {
   return (
     <div>
       <h1>Program</h1>
+      <div className="divider" />
       {items.map(([time, text, icon, size], i) => (
         <div key={i} className="row">
           <span>{time}</span>
@@ -85,19 +86,19 @@ function Meny() {
   return (
     <div className="menu">
       <h1>Meny</h1>
-
+      <div className="divider" />
       <div className="menu-columns">
         {/* LEFT */}
         <div>
           <h2>Varmt</h2>
           <ul>
-            <li>Tapasboller med spicy tomatsaus</li>
-            <li>Tapaspølser med løk og paprika</li>
-            <li>Sticky kyllingvinger</li>
-            <li>BBQ-marinerte pigwings</li>
-            <li>Asiatiske kyllingspyd</li>
-            <li>Krydderbakte småpoteter</li>
-            <li>Baconsurrede dadler</li>
+            <li>Tapasboller (spicy)</li>
+            <li>Tapaspølser</li>
+            <li>Sticky-kyllingvinger</li>
+            <li>BBQ pigwings</li>
+            <li>Asiatiske-kyllingspyd</li>
+            <li>Bakte småpoteter</li>
+            <li>Baconsurrede-dadler</li>
           </ul>
         </div>
 
@@ -105,11 +106,11 @@ function Meny() {
         <div>
           <h2>Kaldt</h2>
           <ul>
-            <li>Brokkolisalat med rødløk, eple, granateple, mango</li>
-            <li>Pastasalat med rød pesto og kylling (hvete)</li>
-            <li>Spinatsalat med avokado og spekeskinke</li>
-            <li>Melonsalat med fetaost</li>
-            <li>Dadler med blåmuggost og valnøtter</li>
+            <li>Brokkolisalat++</li>
+            <li>Pastasalat pesto, kylling (hvete)</li>
+            <li>Spinatsalat</li>
+            <li>Melonsalat, fetaost</li>
+            <li>Dadler + blåmuggost</li>
             <li>Focaccia (hvete)</li>
             <li>Aioli</li>
           </ul>
@@ -123,6 +124,7 @@ function Bordkart() {
   return (
     <div>
       <h1>Bordkart</h1>
+      <div className="divider" />
       <p>Kommer snart...</p>
     </div>
   );
@@ -132,6 +134,7 @@ function Sangtekster() {
   return (
     <div>
       <h1>Sangtekster</h1>
+      <div className="divider" />
       <p>Kommer snart...</p>
     </div>
   );
