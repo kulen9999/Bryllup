@@ -111,3 +111,55 @@ h2 {
   font-size: 15px;
   letter-spacing: 2px;
 }
+.titelIMG{
+  height: 180px;
+  width: auto;
+}
+
+/* Menu layout */
+.menu-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  text-align: left;
+}
+
+/* Each column */
+.menu-columns > div {
+  flex: 1;
+}
+
+/* Headings */
+.menu-columns h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Mobile: stack instead */
+@media (max-width: 600px) {
+  .menu-columns {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.menu-columns {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.menu-columns::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .menu-columns::before {
+    display: none;
+  }
+}
