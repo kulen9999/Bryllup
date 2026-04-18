@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Page.css";
-import titel from "../assets/Tittel.png"
+import titel from "../assets/Tittel.jpg"
 import kake from "../assets/Kake.png"
 import kirke from "../assets/Kirke.png"
 import middag from "../assets/Middag.png"
