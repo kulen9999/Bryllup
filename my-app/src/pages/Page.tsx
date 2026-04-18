@@ -56,12 +56,12 @@ export default function Page() {
 function Program() {
   const items = [
     ["12.30", "Vielse", kirke, 32],
-    ["13.45", "Brudeparet kjører videre", slutt, 24],
+    ["13.45", "Brudeparet kjører videre", slutt, 20],
     ["15.00", "Lokalet åpner på vaulali ", door, 32],
-    ["16.00", "Brudeparet ankommer", slutt, 24],
+    ["16.00", "Brudeparet ankommer", slutt, 20],
     ["16.30", "Middag", middag, 32],
     ["19.00", "Kaffe og kaker", kake, 32],
-    ["23.30", "Farvel til brudeparet", slutt, 24],
+    ["23.30~", "Farvel til brudeparet", slutt, 20],
   ];
 
   return (
