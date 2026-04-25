@@ -90,7 +90,7 @@
 .tab-content {
   height: 55vh;
   overflow-y: auto;
-  padding: 10px;
+  margin: 10px;
 }
 
 /* Titles */
