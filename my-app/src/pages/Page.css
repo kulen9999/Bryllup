@@ -206,14 +206,15 @@ h2 {
 
 /* Lyrics container */
 .lyrics-box {
-  height: 40vh;              /* SAME SIZE always */
+  height: 40vh;
   overflow-y: scroll;
-  text-align: center;        /* CENTER TEXT */
+  text-align: center;
   padding: 10px 20px;
   line-height: 1.6;
-  
-  /* remove ugly scrollbar */
-  scrollbar-width: none;     /* Firefox */
+
+  white-space: pre-wrap; 
+
+  scrollbar-width: none;
 }
 
 .lyrics-box::-webkit-scrollbar {
