@@ -130,12 +130,101 @@ function Bordkart() {
   );
 }
 
+import React from "react";
+
 function Sangtekster() {
+  const songs = [
+    {
+      title: "Alle sammen reiser seg",
+      groups: [
+        "Foreldre og søsken",
+        "Alle besteforeldre",
+        "Tanter og onkler",
+        "Alle søskenbarn",
+        "Alle venner",
+        "Alle med parkeringsbot",
+        "Fotballfans",
+        "De som strikker",
+        "Reiseglade",
+        "Danseglade tar en snurr",
+        "Lesehester",
+        "Musikere og sangere",
+        "De som snorker",
+        "Alle roper høyt hurra"
+      ]
+    },
+    {
+      title: "Velsignelsen",
+      lyrics: `
+Vers 1 x2:
+Herren velsigne
+Og bevare deg
+La sitt ansikt lyse
+med nåde på deg
+Herren løfte sitt ansikt
+mot deg med fred
+
+Refreng:
+Amen, amen, amen
+Amen, amen, amen
+
+Bro:
+Herrens nåde være med deg
+Gjennom tusen generasjoner
+Din familie, dine barn og
+deres barn og deres barn
+
+La hans nærvær være med deg
+Være foran, være bak deg
+Alltid rundt deg, alltid i deg
+Han er med deg, han er med deg
+
+I din medgang, i din motgang
+I din inngang og din utgang
+Når det mørkner, når det lysner
+Han er for deg, han er for deg
+
+Han er for deg, han er for deg
+Han er for deg
+      `
+    }
+  ];
+
+  const [index, setIndex] = React.useState(0);
+
+  const nextSong = () => {
+    setIndex((prev) => (prev + 1) % songs.length);
+  };
+
+  const prevSong = () => {
+    setIndex((prev) => (prev - 1 + songs.length) % songs.length);
+  };
+
   return (
-    <div>
-      <h1>Sangtekster</h1>
-      <div className="divider" />
-      <p>Kommer snart...</p>
+  <div className="songs">
+    <h1>Sangtekster</h1>
+    <div className="divider" />
+
+    {/* Title + arrows */}
+    <div className="song-header">
+      <button onClick={prevSong} className="arrow">‹</button>
+      <h2>{songs[index].title}</h2>
+      <button onClick={nextSong} className="arrow">›</button>
     </div>
-  );
+
+    {/* Lyrics */}
+    <div className="lyrics-box">
+      {songs[index].groups &&
+        songs[index].groups.map((group, i) => (
+          <div key={i} className="verse">
+            <p>{group} reiser seg</p>
+            <p>{group} reiser seg, reiser seg</p>
+            <p>{group} reiser seg</p>
+          </div>
+        ))}
+
+      {songs[index].lyrics && songs[index].lyrics}
+    </div>
+  </div>
+);
 }
