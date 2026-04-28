@@ -217,9 +217,27 @@ Han er for deg
       {songs[index].groups &&
         songs[index].groups.map((group, i) => (
           <div key={i} className="verse">
+            {group!= "Danseglade tar en snurr" && group!="Alle roper høyt hurra" && (
+            <>
             <p>{group} reiser seg</p>
             <p>{group} reiser seg, reiser seg</p>
             <p>{group} reiser seg</p>
+            </>
+            )}
+            {group== "Danseglade tar en snurr" && (
+            <>
+            <p>{group}</p>
+            <p>{group}, tar en snurr</p>
+            <p>{group}</p>
+            </>
+            )}
+            {group== "Alle roper høyt hurra" && (
+            <>
+            <p>{group}</p>
+            <p>{group}, høyt hurra</p>
+            <p>{group}</p>
+            </>
+            )}
           </div>
         ))}
 
