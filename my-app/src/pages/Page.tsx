@@ -121,11 +121,201 @@ function Meny() {
 }
 
 function Bordkart() {
+  const tables = [
+    {
+      table: 0,
+      left: ["Terje", "Dorthe", "Anne Emilie", "Mattias", "Anita", "Stig"],
+      right: ["Hiba", "Marte", "Markus", "Daniel S.", "Amalie"],
+    },
+    {
+      table: 1,
+      left: ["Thea", "Aksel", "Samuel K.", "Martin K."],
+      right: ["Martine", "Martin H.", "Karl Jonas"],
+    },
+    {
+      table: 2,
+      left: ["Nils Magne", "Tone", "Ole Jakob", "Elin B."],
+      right: ["Anne", "Bjørn-Egil", "Hanne"],
+    },
+    {
+      table: 3,
+      left: ["Ruben", "Siv Ingfrid", "Kristin", "Bjørn Magne"],
+      right: ["Rolf", "Kristian", "Turid Marie"],
+    },
+    {
+      table: 4,
+      left: ["Tommy", "Jørn", "Ståle", "Selma"],
+      right: ["Solfrid", "Maria G.", "Sven Jostein", "Sandra"],
+    },
+    {
+      table: 5,
+      left: ["Ester", "Lisbeth", "Øyvind"],
+      right: ["Ingrid", "Arne", "Karl Johan", "Elin T."],
+    },
+    {
+      table: 6,
+      left: ["Ane", "Dina", "Sara Oline", "Benjamin"],
+      right: ["Belen", "Jaime", "Steffen", "Eirik"],
+    },
+    {
+      table: 7,
+      left: ["Silas", "Stine", "Hannah"],
+      right: ["Maria K.", "Sine"],
+    },
+    {
+      table: 8,
+      left: ["Audun", "Sofie", "Elias"],
+      right: ["Synnøve", "Daniel H.", "Julien", "Tonje"],
+    },
+    {
+      table: 9,
+      left: ["Roald", "Benedikte"],
+      right: ["Endre", "Kristine", "Johannes"],
+    },
+    {
+      table: 10,
+      left: ["Pauli", "Samuel Z.", "Ida"],
+      right: ["Ole Thomas", "Andreas", "Øivind", "Jannike"],
+    },
+  ];
+
+  const [search, setSearch] = useState("");
+  const [selectedTable, setSelectedTable] = useState<number | null>(-1);
+  const tablesSearch = []
+
+  const matchingTables = tables.filter((table) =>
+    [...table.left, ...table.right]
+      .join(" ")
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
+
+  const activeTable =
+    selectedTable !== null
+      ? tables.find((t) => t.table === selectedTable)
+      : null;
+
+  if (activeTable) {
+    return (
+      <div className="bordkart">
+        <h1>Bordkart</h1>
+        <div className="divider" />
+
+        <button
+          className="back-button"
+          onClick={() => {
+            setSelectedTable(null);
+            setSearch("");
+          }}
+        >
+          ← Til oversikt
+        </button>
+
+        <div className="single-table-view">
+          <h2>
+            {activeTable.table === 0
+              ? activeTable.name
+              : `Bord ${activeTable.table}`}
+          </h2>
+
+          <div className="table-detail">
+            <div className="table-side">
+              {activeTable.left.map((person, i) => (
+                <div key={i} className="seat">
+                  {person}
+                </div>
+              ))}
+            </div>
+
+            <div className="table-middle" />
+
+            <div className="table-side">
+              {activeTable.right.map((person, i) => (
+                <div key={i} className="seat">
+                  {person}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <div className="bordkart">
       <h1>Bordkart</h1>
       <div className="divider" />
-      <p>Kommer snart...</p>
+
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="Søk etter navn..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
+      {/* SEARCH RESULTS 
+      {search.length > 0 && (
+        <div className="search-results">
+          {matchingTables.length > 0 ? (
+            matchingTables.map((table) => (
+              <button
+                key={table.table}
+                className="search-result"
+                onClick={() => setSelectedTable(table.table)}
+              >
+                {table.table === 0
+                  ? "Hovedbord"
+                  : `Mulig plassering: Bord ${table.table}`}
+              </button>
+            ))
+          ) : (
+            <p>Ingen treff</p>
+          )}
+        </div>
+      )}*/}
+
+      {/* HOVEDBORD */}
+      {matchingTables.some((m) => m.table === 0) && (
+      <div
+        className="head-table"
+        onClick={() => setSelectedTable(0)}
+      >
+        <h2>Hovedbord</h2>
+      </div>)}
+
+      {/* TABLE LAYOUT */}
+      <div className="table-layout">
+        <div className="table-column">
+          {tables
+            .filter((t) => t.table >= 1 && t.table <= 5 && matchingTables.some((m) => m.table === t.table))
+            .map((table) => (
+              <div
+                key={table.table}
+                className="table-card"
+                onClick={() => setSelectedTable(table.table)}
+              >
+                <h2>{table.table}</h2>
+              </div>
+            ))}
+        </div>
+
+        <div className="table-column">
+          {tables
+            .filter((t) => t.table >= 6 && t.table <= 10 && matchingTables.some((m) => m.table === t.table))
+            .map((table) => (
+              <div
+                key={table.table}
+                className="table-card"
+                onClick={() => setSelectedTable(table.table)}
+              >
+                <h2>{table.table}</h2>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

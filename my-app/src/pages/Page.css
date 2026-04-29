@@ -231,3 +231,143 @@ h2 {
   margin: 0;
 }
 
+/* BORDKART */
+
+.bordkart {
+  width: 100%;
+}
+
+/* remove scrollbar */
+.tab-content {
+  scrollbar-width: none;
+}
+
+.tab-content::-webkit-scrollbar {
+  display: none;
+}
+
+.search-box {
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b5aea8;
+  background: transparent;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  text-align: center;
+  color: #5f5954;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-result {
+  border: 1px solid #d6d0cb;
+  background: rgba(255,255,255,0.3);
+  padding: 10px;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  color: #5f5954;
+}
+
+.head-table {
+  border: 1px solid #7e7771;
+  padding: 25px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: rgba(255,255,255,0.25);
+}
+
+.head-table:hover {
+  transform: scale(1.02);
+}
+
+.table-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.table-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.table-card {
+  border: 1px solid #d6d0cb;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: rgba(255,255,255,0.2);
+}
+
+.table-card:hover {
+  transform: scale(1.02);
+  border-color: #7e7771;
+}
+
+/* SINGLE TABLE VIEW */
+
+.single-table-view {
+  margin-top: 20px;
+}
+
+.table-detail {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.table-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table-middle {
+  width: 12px;
+  background: #d6d0cb;
+  border-radius: 999px;
+}
+
+.seat {
+  border: 1px solid #d6d0cb;
+  padding: 10px 16px;
+  min-width: 120px;
+  text-align: center;
+  background: rgba(255,255,255,0.25);
+}
+
+.back-button {
+  border: none;
+  background: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: #7e7771;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+  .table-detail {
+    gap: 15px;
+  }
+
+  .seat {
+    min-width: 100px;
+    font-size: 14px;
+  }
+}
